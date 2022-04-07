@@ -1,32 +1,50 @@
 import ReactDOM from 'react-dom';
-import { useEffect, useState } from "react"
+import { useEffect, useState, Redirect } from "react"
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { authentication } from '../../Firebase/firebase';
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, setPersistence, inMemoryPersistence, fetchSignInMethodsForEmail } from "firebase/auth";
 import "./AuthenticationPage.css"
 import { FaTwitter } from 'react-icons/fa'
 import { FaGoogle } from 'react-icons/fa'
-import Post from '../Posts/Post'; 
+import Sidebar from '../Sidebar/Sidebar';
+import Home from '../HomePage/Home'
+import { FOCUSABLE_SELECTOR } from '@testing-library/user-event/dist/utils';
 
 
 const AuthenticationPage = () => {
 
-  const signInWithFirebase = ()=>{
+  const [isUserSignedIn, setIsUserSignedIn] = useState([]);
+
+  const signInWithFirebase = async ()=>{
+     await setPersistence(authentication, inMemoryPersistence)
+    .then(()=>{
     const provider = new GoogleAuthProvider();
-    signInWithPopup(authentication, provider)
-    .then((result) => { 
-      console.log(result);
-  })
-  .catch((error) => {
-    console.log(error)
-  })
-}
-
-const [isUserSignedIn, setIsUserSignedIn] = useState(true);
-
-
+    return signInWithPopup(authentication, provider)
+    }).catch((error) => {
+      console.log(error.message)
+    })
+  }
+  //   try{
+  //     const signIn = await signInWithPopup(authentication, provider);     
+  //     if(signIn.user.emailVerified === true){
+  //       console.log(signIn);
+  //       setIsUserSignedIn(true);
+  //     } else
+  //       {
+  //         setIsUserSignedIn(false);
+  //       }
+  //   }
+  //   catch(e) {
+  //     alert(e);
+  // }
+  // useEffect(() => {
+  
+  
+   
+  
 
   return (
+    
     <div className='loginPage'>
       <div className='image-logo'>
         <center><FaTwitter className= 'left-logo'/></center>
@@ -39,14 +57,33 @@ const [isUserSignedIn, setIsUserSignedIn] = useState(true);
           <button
             onClick={signInWithFirebase}
             className='google-signin'>
-            <FaGoogle class="google-icon"/>
+             <FaGoogle class="google-icon"/> {/* {isUserSignedIn ? <Sidebar /> : <Redirect to="/" />} */}
             Sign in with Google
           </button>
+          {/* <Routes>
+          <Route path = '/' 
+              element={( 
+                <>
+                    {isUserSignedIn ? <Sidebar /> : <Redirect to="/" />}
+                </>
+              )}/>
+          </Routes> */}
         </div>
        
       </div>
     </div>
+    
   )
 }
+
+//useEffect(()=> {
+ // const checkLoggedIn = async() => {
+ //   const isLoggedin = localStorage.getItem("accessToken");
+ //   )
+ // }
+
+
+
+
 
 export default AuthenticationPage

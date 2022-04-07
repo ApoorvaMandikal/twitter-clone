@@ -1,10 +1,11 @@
-//import TwitterIcon from "@material-ui/icons/Twitter";
-//import LogoutIcon from '@mui/icons-material/Logout';
+
 import './sidebar.css'
 import { useState } from 'react'
 import {RiHome7Fill} from 'react-icons/ri'
 import { FaTwitter } from 'react-icons/fa'
 import { CgProfile } from 'react-icons/cg'
+import { authentication, signOut } from '../../Firebase/firebase'
+import Tweet from '../Tweet/Tweet'
 
 const Sidebar = () => {
 
@@ -12,6 +13,12 @@ const Sidebar = () => {
   const onClick  =()=>{
     setShowResults(wasOpened => !wasOpened);
   }
+
+  const logout = () => {
+    authentication.signOut();
+}
+const [show, setShow] = useState(false);
+  
 
   return (
     <div className='container-sidebar'>
@@ -27,17 +34,18 @@ const Sidebar = () => {
           
 
         <div className='tweet-button'>
-          <button className='tweet'> Tweet </button>
+          <button className='tweet' onClick={()=>setShow(true)}> Tweet </button>
+          <Tweet onClose={()=> setShow(false)} show={show}/>
         </div>
         
       </div>
 
-      <div className='profile-info' onClick={onClick}>{ showResults ? <div className='slide-up-button'><button className='logout-button'> Logout </button></div> : null }
+      <div className='profile-info' onClick={onClick}>{ showResults ? <div className='slide-up-button'><button onClick={logout} className='logout-button'> Logout </button></div> : null }
         <div className='logout' >
           <CgProfile className='profile-picture' style={{ color: '#50b7f5'}}/>
           <div className= 'user-info' >
-            <div className='user-name'>Apoorva</div>
-            <div className='user-handle' style={{opacity: 0.5}}>@apoorva_mandikal</div>
+            <div className='user-name'>{authentication.currentUser.displayName}</div>
+            <div className='user-handle' style={{opacity: 0.5}}>@{authentication.currentUser.email}</div>
           </div>
         </div>
         

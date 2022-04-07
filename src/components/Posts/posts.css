@@ -1,0 +1,35 @@
+.container-postpage{
+    display: flex;
+}
+
+
+
+.sidebar{
+    height:100%;
+    background-color: aliceblue;
+    width: 30%;
+}
+
+
+.posts-content{
+    height: 100%;
+}
+.user-dets{
+    display: flex;
+    display: row;
+}
+
+.user-dets > div{
+    margin-left: 1vw;
+}
+
+.tweet-functionalities{
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    justify-content: space-evenly;
+}
+.icons{
+    width: 1vw;
+    height: 1vw;
+}

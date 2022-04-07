@@ -1,0 +1,19 @@
+.home-container{
+    display: flex;
+}
+
+
+.container-sidebar{
+    width: 35%;
+    align-items: flex-end;
+
+}
+.posts-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post{
+    margin: 2vw;
+}

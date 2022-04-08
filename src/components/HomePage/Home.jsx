@@ -38,9 +38,10 @@ const Home = () => {
     }
 
     const deletePost = async (id) => {
-      await fetch(`http://localhost:5000/tasks/${id}`, {
+      await fetch(`http://localhost:5000/tweet/${id}`, {
         method: 'DELETE'
       })
+      console.log(id)
       setPosts(posts.filter((post)=> post.id!==id))
     }
 
@@ -67,18 +68,20 @@ const Home = () => {
 //    setTasks([...tasks, newTask])
 //    }
 
+      const str = authentication.currentUser.displayName
   return (
       <div className="home-container">
         <Sidebar className="container-sidebar"  onTweet = {tweetContent}/>
             <div className="posts-container">
-            Welcome
-            {
-                authentication.currentUser.email
-            }
-            <Tweets className="post" posts={posts} onDelete={deletePost} onTweet = {tweetContent}/>
+              <div className="welcome-greeting">
+                 Welcome, &nbsp;
+                 {
+                     str.substring(0, str.indexOf(' '))
+                 }
+              </div>
+              <Tweets className="post" posts={posts} onDelete={deletePost} onTweet = {tweetContent}/>
             </div>
-
-    </div>
+        </div>  
   )
 }
 

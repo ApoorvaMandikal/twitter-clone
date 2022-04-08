@@ -27,6 +27,7 @@ const Post = ({post, onDelete}) => {
 
   return (
     
+    <div className='display-post'>
     <div className='container-postpage'>
 
       <div className='profile-picture'>
@@ -45,8 +46,9 @@ const Post = ({post, onDelete}) => {
           </div>
           
         <div className='content'>
-          <div className='wordings'></div>
+          <div className='wordings'>
           <span key={post.id}>{post.text}</span>
+          </div>
           <div className='tweet-functionalities'>
             <BsChat className='icons'/>
             <FiHeart className='icons'/>
@@ -55,6 +57,7 @@ const Post = ({post, onDelete}) => {
         </div>
       </div>
       
+    </div>
     </div>
    
   )

@@ -6,15 +6,27 @@ import {AiOutlineFileGif, AiOutlineRetweet} from 'react-icons/ai'
 import {FiHeart} from 'react-icons/fi'
 import {BsChat} from 'react-icons/bs'
 import { authentication } from '../../Firebase/firebase'
+import { useState } from 'react'
+import Tweet from '../Tweet/Tweet'
+import {FaTimes} from 'react-icons/fa'
 
 //import {IoChatbubbleOutline} from 'react-icons/io5'
 
 
-const Post = () => {
+const Post = ({post, onDelete}) => {
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+
+  //   tweetContent(text);
+
+  //   setText(text);
+  // };
 
   const user = authentication.currentUser;
 
   return (
+    
     <div className='container-postpage'>
 
       <div className='profile-picture'>
@@ -26,11 +38,15 @@ const Post = () => {
           <div className='user-name'>{user.displayName}</div>
           <div className='user-handle' style={{opacity: 0.5}}>@{user.email}</div>
           <div style={{opacity: 0.5}}>&bull;</div>
-          <div className='date-time'style={{opacity: 0.5}}>14h</div>
-        </div>
+          <div className='date-time'style={{opacity: 0.5}}>
+            {/* {timestamp} */}14h
+            </div>
+            <div><FaTimes className='delete-button' onClick={()=>{onDelete(post.id)}}/></div>
+          </div>
+          
         <div className='content'>
           <div className='wordings'></div>
-          <span></span>
+          <span key={post.id}>{post.text}</span>
           <div className='tweet-functionalities'>
             <BsChat className='icons'/>
             <FiHeart className='icons'/>
@@ -40,6 +56,7 @@ const Post = () => {
       </div>
       
     </div>
+   
   )
 }
 

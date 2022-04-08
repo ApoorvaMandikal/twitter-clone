@@ -5,17 +5,22 @@ import {GrGallery} from 'react-icons/gr'
 import {AiOutlineFileGif} from 'react-icons/ai'
 import './tweet.css'
 
-import React from 'react'
-
 const Tweet = (props) => {
 
+  const {user, timestamp, onTweet} = props;
     const [text, setText] = useState('')
-    // onSubmit = (e) => {
 
-    //     props({text})
-
-    //     setText('')
-    // } 
+    const handleChange = (e) => {
+      setText(e.target.value)
+    }
+    
+    const onSubmit = (e)=>{
+      e.preventDefault()
+      onTweet({text})
+      setText('')
+      //console.log(text);
+      //timeStamp: 545986.5
+    }
    
   return (
     <div className={`modal ${props.show ? 'show' : ''}`} onClick={props.onClose}>
@@ -28,11 +33,11 @@ const Tweet = (props) => {
           <input type='text' 
             placeholder='Whats Happening?' 
             value={text} 
-            onChange = {(e) => setText(e.target.value)}
+            onChange = {handleChange}
           />
           </div>
           <div className="modal-footer">
-            <button onClick={props.onSubmit} className="submit-button">
+            <button onClick={onSubmit} className="submit-button">
               Tweet
             </button>
           </div>

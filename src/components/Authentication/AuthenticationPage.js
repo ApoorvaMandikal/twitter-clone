@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom';
 import { useEffect, useState, Redirect } from "react"
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { authentication } from '../../Firebase/firebase';

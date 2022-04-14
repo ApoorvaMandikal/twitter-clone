@@ -1,23 +1,26 @@
 .container-postpage{
     display: flex;
     margin: 1vw;
-    
+    width: 100%;
 }
 
-.display-post{
-    border: 0.01vw solid grey;
-    
+.picture{
+    width: 6vw;
+    height: 4vw;
 }
-
-.posts-content{
+.post-content{
     height: 100%;
+    width: inherit;
 
 }
-.user-dets{
+.user-dets, .first-line{
     display: flex;
     display: row;
 }
 
+.first-line{
+    justify-content: space-between
+}
 .user-dets > div{
     margin-left: 1vw;
 }
@@ -37,4 +40,8 @@
 }
 .wordings{
     margin-bottom: 1vw;
+}
+
+.delete-button{
+    justify-content: flex-end;
 }

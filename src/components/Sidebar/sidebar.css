@@ -1,18 +1,20 @@
 .container-sidebar{
     display: flex;
     flex-direction: column;
-    /* width: 30%; */
     height: 100vh;
-    /* align-items: end; */
 }
 
 .sidebar-components{
     display: flex;
     flex-direction: column;
     color: white;
+    height: inherit;
+    margin-right: 1vw;
+
+}
+.top-half{
     justify-content: space-around;
     margin-bottom: auto;
-
 }
 
 a{
@@ -51,7 +53,7 @@ a{
 .logout{
     display: flex;
     flex-direction: row;
-    width: 17vw;
+    /* width: 17vw; */
 }
 .user-info{
     display: flex;
@@ -60,14 +62,17 @@ a{
     justify-content: center;
 }
 
+.div-button{
+    border: 0.1vw solid grey;
+    border-radius: 1vw;
+}
 .logout-button{
-    margin: 3vw 0 3vw 1.5vw;
-    width: 15vw;
+    margin: 3vw 2vw;
+    width: 75%;
     border-radius: 0;
 }
 .slide-up-button{
     border-radius: 1vw;
-    border: 2px solid rgb(36 32 32 / 90%);
     margin: 2vw 0;
 
 }

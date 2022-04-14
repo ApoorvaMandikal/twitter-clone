@@ -4,8 +4,14 @@ import Post from "../Posts/Post"
 import Sidebar from "../Sidebar/Sidebar"
 import Tweets from "../Tweets/Tweets"
 import "./home.css"
+import { CgProfile } from 'react-icons/cg'
 
 const Home = () => {
+
+  const [showResults, setShowResults] = useState(false)
+  const onClick  =()=>{
+    setShowResults(wasOpened => !wasOpened);
+  }
 
     const [posts, setPosts] = useState([])
     const [tweet, setTweet] = useState([])
@@ -71,13 +77,19 @@ const Home = () => {
       const str = authentication.currentUser.displayName
   return (
       <div className="home-container">
-        <Sidebar className="container-sidebar"  onTweet = {tweetContent}/>
+        <Sidebar className="sidebar" id="sidebar" onTweet = {tweetContent}/>
             <div className="posts-container">
-              <div className="welcome-greeting">
+              <div className="welcome">
+                <div className="sidebar-button" onClick={onClick}>{ showResults ? <div className="slide-out"> </div>: null }
+                  <CgProfile className='profile-picture' style={{ color: '#50b7f5'}}/>
+                </div>
+                <div>Home</div>
+                <div className="welcome-greeting">
                  Welcome, &nbsp;
                  {
                      str.substring(0, str.indexOf(' '))
                  }
+                </div>
               </div>
               <Tweets className="post" posts={posts} onDelete={deletePost} onTweet = {tweetContent}/>
             </div>

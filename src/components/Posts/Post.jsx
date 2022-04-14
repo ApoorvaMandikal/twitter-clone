@@ -30,21 +30,24 @@ const Post = ({post, onDelete}) => {
     <div className='display-post'>
     <div className='container-postpage'>
 
-      <div className='profile-picture'>
-      <CgProfile className='profile-picture' style={{ color: '#50b7f5'}}/>
+      <div className='post-profile-picture'>
+      <CgProfile className='picture' style={{ color: '#50b7f5'}}/>
       </div>
 
       <div className='post-content'>
-        <div className='user-dets'>
+
+        <div className='first-line'>
+          <div className='user-dets'>
           <div className='user-name'>{user.displayName}</div>
           <div className='user-handle' style={{opacity: 0.5}}>@{user.email}</div>
           <div style={{opacity: 0.5}}>&bull;</div>
           <div className='date-time'style={{opacity: 0.5}}>
             {/* {timestamp} */}14h
-            </div>
-            <div><FaTimes className='delete-button' onClick={()=>{onDelete(post.id)}}/></div>
           </div>
-          
+          </div>
+          <div><FaTimes className='delete-button' onClick={()=>{onDelete(post.id)}}/></div>
+        </div>
+      
         <div className='content'>
           <div className='wordings'>
           <span key={post.id}>{post.text}</span>
@@ -56,6 +59,7 @@ const Post = ({post, onDelete}) => {
           </div>
         </div>
       </div>
+      
       
     </div>
     </div>

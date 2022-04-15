@@ -1,16 +1,15 @@
 .container-postpage{
     display: flex;
     margin: 1vw;
-    width: 100%;
 }
 
 .picture{
-    width: 6vw;
-    height: 4vw;
+    width: 2vw;
+    height: 2vw;
 }
 .post-content{
     height: 100%;
-    width: inherit;
+    width:  -webkit-fill-available;
 
 }
 .user-dets, .first-line{
@@ -19,7 +18,7 @@
 }
 
 .first-line{
-    justify-content: space-between
+    justify-content: space-between;
 }
 .user-dets > div{
     margin-left: 1vw;

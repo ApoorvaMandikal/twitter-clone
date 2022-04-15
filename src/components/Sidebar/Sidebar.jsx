@@ -30,8 +30,10 @@ const [show, setShow] = useState(false);
           
           
         <div className='home'>
-          <a href='/'><RiHome7Fill className='home-logo'/>
-          <span className='span-home'>Home</span> </a>
+          <a href='/'>
+            <div className='home-button-sidebar'><RiHome7Fill className='home-logo'/>
+            <span className='span-home'>Home</span></div>
+          </a>
         </div>
           
 

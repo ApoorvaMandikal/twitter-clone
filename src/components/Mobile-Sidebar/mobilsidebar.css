@@ -1,0 +1,36 @@
+.onClick-sidebar {
+    position: fixed;
+    background-color: black;
+    display: flex;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+  }
+
+  .onClick-sidebar.open{
+      opacity: 1;
+      pointer-events: visible;
+  }
+  .mobile-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+   } 
+   
+   .onClick-sidebar.open {
+    transform: translateY(0);
+   }
+
+   .tweet-button-mobile{
+       margin: 20%;
+   }
+   .logout-button-mobile{
+       margin: 20%;
+   }

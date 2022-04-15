@@ -23,8 +23,8 @@ a{
 }
 
 .twitter-logo, .home-logo, .profile-picture{
-    width: 3vw;
-    height: 3vw;
+    width: 2vw;
+    height: 2vw;
 
 } 
 .home, .tweet-button{
@@ -35,6 +35,10 @@ a{
     margin: 0 0 2vw 1.5vw;
     vertical-align: middle;
     font-size: xx-large;
+}
+
+.home-button-sidebar{
+    display: flex;
 }
 
 .tweet, .logout-button{
@@ -53,6 +57,7 @@ a{
 .logout{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     /* width: 17vw; */
 }
 .user-info{

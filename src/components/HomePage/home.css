@@ -30,12 +30,6 @@
     .container-sidebar{visibility: visible;}
 }
 
-.slide-out{
-    width: 30%;
-    position: absolute;
-    background-color: black;
-    z-index: 1;
-}
 
 .posts-container{
     display: flex;
@@ -52,14 +46,13 @@
 
 .welcome{
     border-bottom: 0.01vw solid grey;
-    width: 100%;
+    width: -webkit-fill-available;
     flex-direction: row;
 
 }
 .welcome-greeting{
     margin: 1.5vw;
     font-size: 1.5vw;
-    width: 100%;
 }
 
 .display-post{

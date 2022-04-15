@@ -8,8 +8,8 @@
     z-index: 1;
     top: 0;
     left: 0;
-    width: 30%;
-    height: 100%;
+    width: 30vw;
+    height: 100vh;
   }
 
   .onClick-sidebar.open{
@@ -21,7 +21,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
-    width: 100%;
+    width: -webkit-fill-available;
    } 
    
    .onClick-sidebar.open {

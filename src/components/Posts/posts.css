@@ -12,6 +12,10 @@
     width:  -webkit-fill-available;
 
 }
+
+.user-dets{
+    font-size: 1vw;
+}
 .user-dets, .first-line{
     display: flex;
     display: row;
@@ -19,7 +23,10 @@
 
 .first-line{
     justify-content: space-between;
+    width: 35vw;
 }
+
+
 .user-dets > div{
     margin-left: 1vw;
 }

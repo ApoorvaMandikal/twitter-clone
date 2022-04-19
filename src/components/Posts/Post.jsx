@@ -38,7 +38,8 @@ const Post = ({post, onDelete}) => {
 
         <div className='first-line'>
           <div className='user-dets'>
-          <div className='user-name'>{user.displayName}</div>
+          <div className='user-name'>{user.displayName}
+          </div>
           <div className='user-handle' style={{opacity: 0.5}}>@{user.email}</div>
           <div style={{opacity: 0.5}}>&bull;</div>
           <div className='date-time'style={{opacity: 0.5}}>

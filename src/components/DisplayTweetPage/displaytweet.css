@@ -1,0 +1,126 @@
+.container-displayTweetPage{
+    display: flex;
+}
+
+.displayTweetPage-withComments{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+
+.displayTweetPage{
+    display: flex;
+    flex-direction: column;
+    margin: 1vw;
+}
+
+@media only screen and (max-device-width: 1000px) {
+    .displayTweetPage-withComments{
+        display: flex;
+        flex-direction: column;
+        width: 40vw;
+        align-items: center;
+    }
+}
+
+.width-picUser{
+    display: flex;
+    width: 9vw;
+    justify-content: space-between;
+}
+
+.pic-userdeets{
+    display: flex;
+    flex-direction: row;
+}   
+
+.user-deets{
+    display: flex;
+    flex-direction: column;
+    font-size: 1vw;
+}
+
+.tweet-content{
+    display: flex;
+    flex-direction: column;
+    height: 10vw;
+    justify-content: space-evenly;
+    margin-top: 1vw;
+}
+.picture{
+    width: 3vw;
+    height: 3vw;
+}
+.timestamp-details{
+    display: flex;
+    font-size: 0.8vw;
+}
+.tweet-wordings{
+    font-size: 2vw;
+}
+
+.counter{
+    border-top: 0.01vw solid grey;
+    font-size: 1vw;
+}
+
+.counter-deets{
+    width: 4vw;
+    margin: 0.6vw 0;
+}
+
+.tweet-icons{
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    justify-content: space-evenly;
+    border-top: 0.01vw solid grey;
+    border-bottom: 0.01vw solid grey;;
+}
+
+.timestamp-details, .counter, .tweet-icons, .tweet-wordings{
+    height: 3vw;
+    align-items: center;
+}
+
+.compose-comment{
+    display: flex;
+    flex-direction: row;
+    margin: 1vw;
+}
+.additional-contents-reply{
+    display: flex;
+    height: 2vw;
+}
+.additions{
+    display: flex;
+    justify-content: space-evenly;
+    width: 10vw;
+    margin-right: auto;
+    }
+.additional-icon{
+    height: 2vw;
+    width: 1.3vw;
+}
+.reply{
+    background-color: #50b7f5;
+    color: white;
+    border-radius: 1vw;
+    width: 5vw;
+    height: 2vw;
+    font-size: 1vw;
+    border: none;
+}
+.textbox {
+    width: 35vw;
+    height: 3vw;
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    color: white;
+    margin-left: 1vw;
+    font-size: 1vw;
+}
+.textbox:focus{
+    outline: none;
+}

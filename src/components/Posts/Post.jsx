@@ -51,7 +51,7 @@ const Post = ({post, onDelete}) => {
       
         <div className='content'>
           <div className='wordings'>
-          <span key={post.id}>{post.text}</span>
+          {post.tweet}
           </div>
           <div className='tweet-functionalities'>
             <BsChat className='icons'/>

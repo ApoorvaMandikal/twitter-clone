@@ -46,6 +46,7 @@
 }
 .wordings{
     margin-bottom: 1vw;
+    word-break: break-all;
 }
 
 .delete-button{

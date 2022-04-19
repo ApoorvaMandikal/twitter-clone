@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react"
 import { authentication } from "../../Firebase/firebase"
+import { Link } from 'react-router-dom'
 import Post from "../Posts/Post"
 import Sidebar from "../Sidebar/Sidebar"
 import Tweets from "../Tweets/Tweets"
 import MobileSidebar from "../Mobile-Sidebar/MobileSidebar"
+import DisplayTweet from "../DisplayTweetPage/DisplayTweet"
 import "./home.css"
 import { CgProfile } from 'react-icons/cg'
+import RightSidebar from "../Right-Sidebar/RightSidebar"
 
 
 const Home = () => {
@@ -62,7 +65,7 @@ const Home = () => {
         setTweet([...text, tweetContent]);
         console.log(text);
       }
-      // console.log(tweet);
+      console.log(tweet);
   
 //    const addTask = (task) =>{
 //   //   const res = await fetch('http://localhost:5000/tasks', {
@@ -80,6 +83,7 @@ const Home = () => {
 //    }
 
       const str = authentication.currentUser.displayName
+
   return (
       <div className="home-container">
         <Sidebar className="sidebar" id="sidebar" onTweet = {tweetContent}/>
@@ -99,8 +103,9 @@ const Home = () => {
                  }
                 </div>
               </div>
-              <Tweets className="post" posts={posts} onDelete={deletePost} onTweet = {tweetContent}/>
+                <Tweets className="post" posts={posts} onDelete={deletePost} onTweet = {tweetContent}/>
             </div>
+          <RightSidebar className="rightSidebar"/>
         </div>  
   )
 }

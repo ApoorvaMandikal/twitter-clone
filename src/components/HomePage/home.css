@@ -4,13 +4,6 @@
     max-height: 100%;
 }
 
-
-.container-sidebar{
-    width: 60%;
-    align-items: flex-end;
-    border-right: 0.01vw solid grey;
-}
-
 .mobile-home-logo{
     visibility: collapse;
     display: flex;
@@ -21,9 +14,15 @@
 }
 @media only screen and (max-device-width: 1000px) {
     .container-sidebar{visibility:collapse; position:absolute;}
-    .posts-container{align-items: center;}
+    .posts-container{align-items: center; width: 100vw !important;}
+    .first-line{width: 90vw;}
     .container-postpage{margin: 2vw 5vw;}
     .mobile-home-logo{visibility:visible;}
+    .icons {
+        width: 3vw;
+        height: 2vw;
+    }
+    .container-Rightsidebar {display: none;}
     /* .onclick-sidebar{visibility: visible; } */
 }
 @media only screen and (min-device-width: 1000px){
@@ -34,7 +33,7 @@
 .posts-container{
     display: flex;
     flex-direction: column;
-    width: -webkit-fill-available; 
+    width: 40vw; 
     
 }
 /* .display-post::after{

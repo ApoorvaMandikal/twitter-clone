@@ -1,5 +1,5 @@
 import './rightSidebar.css'
-import {RiHome7Fill} from 'react-icons/ri'
+import { RiHome7Fill } from 'react-icons/ri'
 import { FaTwitter } from 'react-icons/fa'
 import { CgProfile } from 'react-icons/cg'
 
@@ -7,40 +7,42 @@ const RightSidebar = () => {
   return (
     <div className='container-Rightsidebar'>
 
-    <div className='sidebar-components'>
+      <div className='box-news'>
+        <div className='box-contents'>
 
-      <div className='top-half'>
-      <div className='logo'><FaTwitter className='twitter-logo'/></div>
-        
-        
-      <div className='home'>
-        <a href='/'>
-          <div className='home-button-sidebar'><RiHome7Fill className='home-logo'/>
-          <span className='span-home'>Home</span></div>
-        </a>
-      </div>
-        
+          <div className='heading-whatsHappening'><h2>What's Happening</h2></div>
 
-      <div className='tweet-button'>
-        <button className='tweet' />
-      </div>
-      </div>
-      
-    
-      
-      <div className='profile-info' >
-        <div className='logout' >
-          <CgProfile className='profile-picture' style={{ color: '#50b7f5'}}/>
-          <div className= 'user-info' >
-            <div className='user-name'>Hello</div>
-            <div className='user-handle' style={{opacity: 0.5}}>@No</div>
+          <div className='topics-trending'>
+            <div className='trending'>
+              <div className='genre-trending'>Music</div>
+              <div className='word-trending'>Trending</div>
+            </div>
+            <div className='topic-trending'><h2>Taylor Swift</h2></div>
+            <div className='no-tweets'>62.3K Tweets</div>
+          </div>
+
+          <div className='topics-trending'>
+            <div className='trending'>
+              <div className='genre-trending'>Music</div>
+              <div className='word-trending'>Trending</div>
+            </div>
+            <div className='topic-trending'><h2>Taylor Swift</h2></div>
+            <div className='no-tweets'>62.3K Tweets</div>
+          </div>
+
+          <div className='topics-trending'>
+            <div className='trending'>
+              <div className='genre-trending'>Music</div>
+              <div className='word-trending'>Trending</div>
+            </div>
+            <div className='topic-trending'><h2>Taylor Swift</h2></div>
+            <div className='no-tweets'>62.3K Tweets</div>
           </div>
         </div>
       </div>
 
     </div>
 
-  </div>
   )
 }
 

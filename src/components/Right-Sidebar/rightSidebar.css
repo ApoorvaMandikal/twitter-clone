@@ -5,3 +5,32 @@
     width: 30vw;
     border-left: 0.01vw solid grey;
 }
+
+.box-news{
+    display: flex;
+    background-color: #16181c;
+    border: 0.01vw solid grey;
+    width: 80%;
+    border-radius: 1vw;
+    height: 30vw;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.box-contents{
+    display: flex;
+    height: inherit;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.topics-trending{
+    display: flex;
+    flex-direction: column;
+}
+.trending{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

@@ -35,7 +35,7 @@ a{
 
 } 
 .home, .tweet-button{
-        margin-top: 3vw;
+        margin-top: 2vw;
 }
 .span-home{
     margin: 0 1.5vw;
@@ -47,8 +47,8 @@ a{
 }
 
 .tweet, .logout-button{
-    width: 17vw;
-    height: 4vw;
+    width: 15vw;
+    height: 3vw;
     border-radius: 50vw;
     font-size: 1.5vw;
     background-color: #50b7f5;

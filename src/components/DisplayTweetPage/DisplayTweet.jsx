@@ -15,6 +15,14 @@ import Comment from '../Comment/Comment'
 
 
 const DisplayTweet = () => {
+
+    const [comment, setComment] = useState('')
+
+    const onComment = () =>{
+        console.log(comment);
+    }
+    
+        
     // const {
     //     params: { id },
     //   } = useMatch('/DisplayTweet/:id');
@@ -33,8 +41,9 @@ const DisplayTweet = () => {
             <Sidebar className="sidebar" id="sidebar" />
 
             <div className='displayTweets-withComments'>
+
                 <div className='go-back'>
-                    <BsArrowLeft className="icons" onClick={() => { }} />
+                    <BsArrowLeft className="goback-icon" onClick={() => { }} />
                 </div>
 
                 <div className='displayTweetPage'>
@@ -56,7 +65,7 @@ const DisplayTweet = () => {
                         <div className='tweet-content'>
 
                             <div className='tweet-wordings'>
-                                <span key={posts.id}>{posts.text}</span>
+                                {posts.text}
                             </div>
 
 
@@ -75,9 +84,9 @@ const DisplayTweet = () => {
 
 
                             <div className='tweet-icons'>
-                                <BsChat className='icons' />
-                                <FiHeart className='icons' />
-                                <AiOutlineRetweet className='icons' />
+                                <BsChat className='comment-icons' />
+                                <FiHeart className='comment-icons' />
+                                <AiOutlineRetweet className='comment-icons' />
                             </div>
 
                         </div>
@@ -99,7 +108,7 @@ const DisplayTweet = () => {
                                 <div><AiOutlineFileGif className='additional-icon' style={{ color: '#50b7f5' }} /></div>
                             </div>
                             <div className='reply-button'>
-                                <button className='reply'>Reply</button>
+                                <button className='reply' onClick={onComment}>Reply</button>
                             </div>
                         </div>
                     </div>
@@ -109,6 +118,7 @@ const DisplayTweet = () => {
 
 
             </div>
+
             <RightSidebar />
         </div>
 

@@ -2,7 +2,11 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    width: 30vw;
+    align-items: flex-end;
+    border-right: 0.01vw solid grey;
 }
+
 
 .sidebar-components{
     display: flex;
@@ -21,29 +25,30 @@ a{
     text-decoration: none;
     color: inherit;
 }
+.home{
+    display: flex;
+}
 
 .twitter-logo, .home-logo, .profile-picture{
     width: 2vw;
-    height: 2vw;
+    height: 1.5vw;
 
 } 
 .home, .tweet-button{
-        margin-top: 5vw;
+        margin-top: 3vw;
 }
 .span-home{
-    display: inline-block;
-    margin: 0 0 2vw 1.5vw;
-    vertical-align: middle;
-    font-size: xx-large;
+    margin: 0 1.5vw;
+    font-size: 1.5vw;
 }
 
-.home-button-sidebar{
+.button-sidebar{
     display: flex;
 }
 
 .tweet, .logout-button{
     width: 17vw;
-    height: 3vw;
+    height: 4vw;
     border-radius: 50vw;
     font-size: 1.5vw;
     background-color: #50b7f5;
@@ -65,6 +70,8 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 15vw;
+    font-size: 1vw;
 }
 
 .div-button{

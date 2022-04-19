@@ -1,25 +1,28 @@
 .loginPage{
     display: flex;
     flex-direction: row;
-    min-height: 100%;
+    height: 100vh;
 }
 
 @media only screen and (max-device-width: 1000px) {
-    .loginPage {flex-direction: column;}
+    .loginPage {flex-direction: column; height: 100vh;}
 
     .image-logo{
         order: 2;
         min-width: 100%; 
+    }
+    .left-logo{
+        margin-left: 35vw !important;
+        width: 25vw !important;
+        height: 45vh !important;
     }
     .signIn-creds{
         height: 100%;
     }
     .login-form{
             order:1;
-            /*margin-left: 20vw;
-            margin-bottom: 30vw;*/
-            margin: auto;
-            width:52vw;
+            margin: 25vw auto !important;
+            width:52vw !important;
 
     }
     .p1{
@@ -56,38 +59,45 @@
 }
 
 .left-logo{
-    margin: 20vw auto;
-    width: 20vw;
-    height: 20vw;
+    margin: 0 15vw;
+    width: 25vw;
+    height: 100vh;
 }
 .signIn-creds{
-    margin-left: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-form{
+    width: 30vw;
 }
 
 .right-logo{
     color: white;
-    width: 2vw;
-    height: 2vw;
-    margin-top: 10vw;
+    width: 3vw;
+    height: 3vw;
+    margin-top: 5vw;
 }
 .p1{
-    font-size: 3.5vw;
+    font-size: 4vw;
     margin-top: 3vw;
 }
 .p2{
-    font-size: 2vw;
+    font-size: 2.5vw;
     margin-top: 3vw;
 }
 .google-signin{
-    width: 17vw;
-    height: 3vw;
+    width: 20vw;
+    height: 4vw;
     border-radius: 50vw;
-    margin: 3vw 0 0 0.5vw;
-    font-size: 1vw;
+    margin: 5vw 0 0 1.5vw;
+    font-size: 1.5vw;
 }
 .google-icon{
     display: inline-block;
       vertical-align: middle;
       width: 2vw;
-      height: 1vw;
+      height: 1.5vw;
 }

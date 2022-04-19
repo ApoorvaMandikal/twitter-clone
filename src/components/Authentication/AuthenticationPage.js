@@ -20,6 +20,7 @@ const AuthenticationPage = () => {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(authentication, provider)
     }).catch((error) => {
+      alert('Error signing in, please try later')
       console.log(error.message)
     })
   }
@@ -46,7 +47,7 @@ const AuthenticationPage = () => {
     
     <div className='loginPage'>
       <div className='image-logo'>
-        <center><FaTwitter className= 'left-logo'/></center>
+        <FaTwitter className= 'left-logo'/>
       </div>
       <div className='signIn-creds'>
         <div className='login-form'>

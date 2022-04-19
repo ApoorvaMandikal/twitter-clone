@@ -1,47 +1,45 @@
 import { useEffect, useState, Redirect } from "react"
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route, Navigate, useNavigate} from 'react-router-dom'
 import { authentication } from '../../Firebase/firebase';
-import { signInWithPopup, GoogleAuthProvider, setPersistence, inMemoryPersistence, fetchSignInMethodsForEmail } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, setPersistence, inMemoryPersistence, fetchSignInMethodsForEmail,browserSessionPersistence } from "firebase/auth";
 import "./AuthenticationPage.css"
 import { FaTwitter } from 'react-icons/fa'
 import { FaGoogle } from 'react-icons/fa'
 import Sidebar from '../Sidebar/Sidebar';
 import Home from '../HomePage/Home'
 import { FOCUSABLE_SELECTOR } from '@testing-library/user-event/dist/utils';
+import { useAuthState } from "react-firebase-hooks/auth";
 
 
 const AuthenticationPage = () => {
 
   const [isUserSignedIn, setIsUserSignedIn] = useState([]);
+  const [user] = useAuthState(authentication)
 
-  const signInWithFirebase = async ()=>{
-     await setPersistence(authentication, inMemoryPersistence)
+  const signInWithFirebase = async (navigate)=>{
+     await setPersistence(authentication, browserSessionPersistence)
     .then(()=>{
     const provider = new GoogleAuthProvider();
-    return signInWithPopup(authentication, provider)
+    return (
+      signInWithPopup(authentication, provider).then((result)=>{
+
+        if (result) {
+          navigate("/", { replace: true });
+        }
+      }).catch((error)=>{
+        alert('unable to find user')
+        console.log(error.message)
+      })
+      )
+   
     }).catch((error) => {
       alert('Error signing in, please try later')
       console.log(error.message)
     })
   }
-  //   try{
-  //     const signIn = await signInWithPopup(authentication, provider);     
-  //     if(signIn.user.emailVerified === true){
-  //       console.log(signIn);
-  //       setIsUserSignedIn(true);
-  //     } else
-  //       {
-  //         setIsUserSignedIn(false);
-  //       }
-  //   }
-  //   catch(e) {
-  //     alert(e);
-  // }
-  // useEffect(() => {
-  
-  
-   
-  
+
+  let navigate = useNavigate();
+
 
   return (
     
@@ -55,7 +53,7 @@ const AuthenticationPage = () => {
           <div className='p1'><p className='p1'>Happening now</p></div>
           <div className='p2'><p className='p2'>Join Tweeter today.</p></div>
           <button
-            onClick={signInWithFirebase}
+            onClick={() => signInWithFirebase(navigate)}
             className='google-signin'>
              <FaGoogle class="google-icon"/> {/* {isUserSignedIn ? <Sidebar /> : <Redirect to="/" />} */}
             Sign in with Google

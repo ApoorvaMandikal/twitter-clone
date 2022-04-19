@@ -7,27 +7,31 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthenticationPage from './components/Authentication/AuthenticationPage';
 import Post from './components/Posts/Post';
 import Home from './components/HomePage/Home';
-//import RateReviewIcon from '@mui/icons-material/RateReview'; //tweet a new post icon for mobile responsive
-
+import DisplayTweet from './components/DisplayTweetPage/DisplayTweet';
+import ProtectedRoute from './ProtectedRoute';
 
 
 
 
 
 function App() {
-  // return (
-  //   <div>
-  //     {/* <Router>
-  //      <Routes>
-  //       <Route exact path="/" element = {<AuthenticationPage />}></Route>
-  //       <Route exact path='/home' element={<Home/>}/>
-  //     </Routes>
-  // </Router> */}
   const [user] = useAuthState(authentication);
 
+    // <div>    <DisplayTweet/> </div>
+
+
+
   return (
-    user ? <Home/> : <AuthenticationPage/>
-  );
+  <Router>
+       <Routes>
+         <Route path='/' element={<ProtectedRoute auth={true}/>} />
+        <Route exact path="/login" element ={<AuthenticationPage />} />
+      </Routes>
+  </Router> )
+
+  // return (
+  //   user ? <DisplayTweet /> : <AuthenticationPage/>
+  // );
   
 }
 

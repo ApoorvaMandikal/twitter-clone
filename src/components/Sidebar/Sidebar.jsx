@@ -39,47 +39,33 @@ const [show, setShow] = useState(false);
           </a>
         </div>
         <div className='home'>
-          <a href='/'>
             <div className='button-sidebar'><RiHashtag className='home-logo'/>
             <span className='span-home'>Explore</span></div>
-          </a>
         </div>
         <div className='home'>
-          <a href='/'>
             <div className='button-sidebar'><AiOutlineBell className='home-logo'/>
             <span className='span-home'>Notifications</span></div>
-          </a>
         </div>
         <div className='home'>
-          <a href='/'>
             <div className='button-sidebar'><BiEnvelope className='home-logo'/>
             <span className='span-home'>Messages</span></div>
-          </a>
         </div>
         <div className='home'>
-          <a href='/'>
             <div className='button-sidebar'><BiBookmark className='home-logo'/>
             <span className='span-home'>
               Bookmark</span></div>
-          </a>
         </div>
         <div className='home'>
-          <a href='/'>
             <div className='button-sidebar'><FaList className='home-logo'/>
             <span className='span-home'>Lists</span></div>
-          </a>
         </div>
         <div className='home'>
-          <a href='/'>
             <div className='button-sidebar'><CgProfile className='home-logo'/>
             <span className='span-home'>Profile</span></div>
-          </a>
         </div>
         <div className='home'>
-          <a href='/'>
             <div className='button-sidebar'><CgMoreO className='home-logo'/>
             <span className='span-home'>More</span></div>
-          </a>
         </div>
           
 

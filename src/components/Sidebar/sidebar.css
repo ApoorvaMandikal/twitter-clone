@@ -4,7 +4,6 @@
     height: 100vh;
     width: 30vw;
     align-items: flex-end;
-    border-right: 0.01vw solid grey;
 }
 
 
@@ -14,11 +13,13 @@
     color: white;
     height: inherit;
     margin-right: 1vw;
+    position: fixed;
 
 }
 .top-half{
     justify-content: space-around;
     margin-bottom: auto;
+    height: 60vh;
 }
 
 a{
@@ -54,10 +55,12 @@ a{
     background-color: #50b7f5;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .profile-info{
     align-items: flex-end;
+    cursor: pointer;
 }
 .logout{
     display: flex;
@@ -86,5 +89,6 @@ a{
 .slide-up-button{
     border-radius: 1vw;
     margin: 2vw 0;
-
+    z-index: 1;
+    background-color: black;
 }

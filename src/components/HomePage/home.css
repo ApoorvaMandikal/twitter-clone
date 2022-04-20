@@ -4,50 +4,25 @@
     max-height: 100%;
 }
 
-.mobile-home-logo{
-    visibility: collapse;
-    display: flex;
-    margin: 1vw;
-}
 .sidebar-button{
     margin-right: 1vw;
 }
-@media only screen and (max-device-width: 1000px) {
-    .container-sidebar{visibility:collapse; position:absolute;}
-    .posts-container{align-items: center; width: 100vw !important;}
-    .first-line{width: 90vw;}
-    .container-postpage{margin: 2vw 5vw;}
-    .mobile-home-logo{visibility:visible;}
-    .icons {
-        width: 3vw;
-        height: 2vw;
-    }
-    .container-Rightsidebar {display: none;}
-    /* .onclick-sidebar{visibility: visible; } */
+.mobile-home-logo{
+    display: none;
 }
-@media only screen and (min-device-width: 1000px){
-    .container-sidebar{visibility: visible;}
-}
-
 
 .posts-container{
     display: flex;
     flex-direction: column;
     width: 40vw; 
-    
+    border-left: 0.01vw solid grey;
+    border-right: 0.01vw solid grey;    
 }
-/* .display-post::after{
-    content: '';
-    position: absolute;
-    width: 100vw;
-    border-bottom: 0.01vw solid white;
-} */
-
 .welcome{
     border-bottom: 0.01vw solid grey;
     width: -webkit-fill-available;
     flex-direction: row;
-
+    height: 5vw;
 }
 .welcome-greeting{
     margin: 1.5vw;
@@ -58,3 +33,34 @@
     width: 100%;
     border-bottom: 0.01vw solid grey;
 }
+.sidebar-profile-picture{
+    width: 4vw;
+    height: 4vw;
+}
+@media only screen and (max-device-width: 1000px) {
+    .container-sidebar{visibility:collapse; position:absolute;}
+    .posts-container{align-items: center; width: 100vw; border: none;}
+    .first-line{width: 99%;}
+    .container-postpage{margin: 2vw 3vw;}
+    .mobile-home-logo{visibility:visible;}
+    .icons {
+        width: 3vw;
+        height: 2vw;
+    }
+    .container-Rightsidebar {display: none;}
+    .user-dets{font-size: 2vw;}
+    .user-name{font-size: 2.5vw;}
+    .wordings {font-size: 2.5vw;
+        margin: 1vw 0 3vw 0;}
+        .welcome-greeting{
+            margin: 1.5vw;
+            font-size: 2.5vw;
+        }
+        .mobile-home-logo{
+            display: flex;
+            margin: 1vw;
+            align-items: center;
+        }
+    .welcome{    height: 12vw;
+    }
+    }

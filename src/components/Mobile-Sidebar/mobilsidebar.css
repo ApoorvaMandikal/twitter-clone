@@ -8,7 +8,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    width: 70vw;
+    width: 65vw;
     height: 100vh;
   }
 
@@ -19,12 +19,12 @@
   .mobile-sidebar {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
-    width: -webkit-fill-available;
+    align-items: center;
+    width: 100%;
    } 
 
    .close-button-mobile{
-       align-items: flex-end;
+       width: 100%;
    }
    
    .onClick-sidebar.open {
@@ -40,11 +40,18 @@
 
 
  .component-mobile{
-     margin-top: 7vw;
  }
 
 .mobile-components{
-margin: 4vw;
+    height: 55%;
+    font-size: 5vw;
+    height: 55%;
+    font-size: 5vw;
+    width: 45vw;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
 }
 
  .button-mobile{

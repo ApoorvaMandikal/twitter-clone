@@ -3,18 +3,18 @@
     flex-direction: column;
     height: 100vh;
     width: 30vw;
-    border-left: 0.01vw solid grey;
 }
 
 .box-news{
     display: flex;
     background-color: #16181c;
     border: 0.01vw solid grey;
-    width: 80%;
+    width: 24%;
     border-radius: 1vw;
     height: 30vw;
     align-items: center;
-    margin: 0 auto;
+    margin: 9vw 3vw;
+    position: fixed;
 }
 
 .box-contents{
@@ -33,4 +33,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+@media only screen and (max-device-width: 1000px){
+.container-Rightsidebar {
+    display: none;
+}
 }

@@ -62,7 +62,7 @@ const Home = () => {
               <div className="welcome">
                 <div className="mobile-home-logo">
                   <div className="sidebar-button">
-                    <CgProfile className='profile-picture' style={{ color: '#50b7f5'}} onClick={()=>setOpen(true)}/>
+                    <CgProfile className='sidebar-profile-picture' style={{ color: '#50b7f5'}} onClick={()=>setOpen(true)}/>
                     <MobileSidebar onClose={()=> setOpen(false)} open={open}/>
                   </div>
                   <div><a href="/">Home</a></div>

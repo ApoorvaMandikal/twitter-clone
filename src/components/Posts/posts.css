@@ -40,6 +40,7 @@
 .icons{
     width: 1vw;
     height: 1vw;
+    cursor: pointer;
 }
 .content{
     margin: 0 1vw;

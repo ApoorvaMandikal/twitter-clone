@@ -1,13 +1,12 @@
 import { useEffect, useState, Redirect } from "react"
 import {BrowserRouter as Router, Routes, Route, Navigate, useNavigate} from 'react-router-dom'
 import { authentication } from '../../Firebase/firebase';
-import { signInWithPopup, GoogleAuthProvider, setPersistence, inMemoryPersistence, fetchSignInMethodsForEmail,browserSessionPersistence } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, setPersistence, inMemoryPersistence, browserSessionPersistence, browserLocalPersistence } from "firebase/auth";
 import "./AuthenticationPage.css"
 import { FaTwitter } from 'react-icons/fa'
 import { FaGoogle } from 'react-icons/fa'
 import Sidebar from '../Sidebar/Sidebar';
 import Home from '../HomePage/Home'
-import { FOCUSABLE_SELECTOR } from '@testing-library/user-event/dist/utils';
 import { useAuthState } from "react-firebase-hooks/auth";
 
 
@@ -55,17 +54,9 @@ const AuthenticationPage = () => {
           <button
             onClick={() => signInWithFirebase(navigate)}
             className='google-signin'>
-             <FaGoogle class="google-icon"/> {/* {isUserSignedIn ? <Sidebar /> : <Redirect to="/" />} */}
+             <FaGoogle class="google-icon"/> 
             Sign in with Google
           </button>
-          {/* <Routes>
-          <Route path = '/' 
-              element={( 
-                <>
-                    {isUserSignedIn ? <Sidebar /> : <Redirect to="/" />}
-                </>
-              )}/>
-          </Routes> */}
         </div>
        
       </div>
@@ -73,15 +64,5 @@ const AuthenticationPage = () => {
     
   )
 }
-
-//useEffect(()=> {
- // const checkLoggedIn = async() => {
- //   const isLoggedin = localStorage.getItem("accessToken");
- //   )
- // }
-
-
-
-
 
 export default AuthenticationPage

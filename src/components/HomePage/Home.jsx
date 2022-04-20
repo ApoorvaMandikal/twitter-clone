@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react"
 import { authentication } from "../../Firebase/firebase"
-import { Link } from 'react-router-dom'
-import Post from "../Posts/Post"
 import Sidebar from "../Sidebar/Sidebar"
 import Tweets from "../Tweets/Tweets"
 import MobileSidebar from "../Mobile-Sidebar/MobileSidebar"
-import DisplayTweet from "../DisplayTweetPage/DisplayTweet"
 import "./home.css"
 import { CgProfile } from 'react-icons/cg'
 import RightSidebar from "../Right-Sidebar/RightSidebar"

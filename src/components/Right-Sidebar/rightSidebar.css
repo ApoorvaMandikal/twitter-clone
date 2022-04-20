@@ -11,9 +11,9 @@
     border: 0.01vw solid grey;
     width: 24%;
     border-radius: 1vw;
-    height: 30vw;
+    height: 37vw;
     align-items: center;
-    margin: 9vw 3vw;
+    margin: 4vw 3vw;
     position: fixed;
 }
 
@@ -22,17 +22,30 @@
     height: inherit;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
+    margin: 1vw;
 }
 .topics-trending{
     display: flex;
     flex-direction: column;
+    height: 7vw;
+    width: 20vw;
+    justify-content: space-evenly;
 }
 .trending{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    font-size: 1vw;
+    opacity: 0.5;
+    width: fit-content;
+}
+.no-tweets{
+    font-size: 0.9vw;
+    opacity: 0.9;
+}
+.topic-trending{
+    font-size: 1.1vw;
 }
 
 @media only screen and (max-device-width: 1000px){

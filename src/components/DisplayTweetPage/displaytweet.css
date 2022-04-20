@@ -1,11 +1,13 @@
 .container-displayTweetPage{
-    display: flex;
+    display: flex;   
 }
 
 .displayTweets-withComments{
     display: flex;
     flex-direction: column;
     width: 40vw;
+    border-left: 0.01vw solid grey;
+    border-right: 0.01vw solid grey; 
 }
 
 .displayTweetPage{

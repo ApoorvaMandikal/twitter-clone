@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useMatch } from 'react-router-dom'
+import { useMatch, useNavigate } from 'react-router-dom'
 import Post from '../Posts/Post'
 import './displaytweet.css'
 import { CgProfile } from 'react-icons/cg'
@@ -18,11 +18,15 @@ const DisplayTweet = () => {
 
     const [comment, setComment] = useState('')
 
-    const onComment = () =>{
+    const onComment = () => {
         console.log(comment);
     }
-    
-        
+
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate("/")
+    }
+
     // const {
     //     params: { id },
     //   } = useMatch('/DisplayTweet/:id');
@@ -43,7 +47,7 @@ const DisplayTweet = () => {
             <div className='displayTweets-withComments'>
 
                 <div className='go-back'>
-                    <BsArrowLeft className="goback-icon" onClick={() => { }} />
+                    <BsArrowLeft className="goback-icon" onClick={handleClick} />
                 </div>
 
                 <div className='displayTweetPage'>

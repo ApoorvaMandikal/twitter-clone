@@ -6,10 +6,9 @@ import {AiOutlineFileGif} from 'react-icons/ai'
 import './tweet.css'
 import { authentication } from '../../Firebase/firebase';
 
-const Tweet = ({show, onClose}) => {  
+const Tweet = ({show, onClose, setIsLoadingTweet}) => {  
 
     const [text, setText] = useState('')
-
 
     const handleChange = (e) => {
       setText(e.target.value)
@@ -22,6 +21,7 @@ const Tweet = ({show, onClose}) => {
           "email": authentication.currentUser.email,
           "timestamp": new Date().toISOString(),
         }
+        setIsLoadingTweet(true);
       const res = await fetch('http://localhost:5000/tweet', {
         method: 'POST',
         headers: {
@@ -29,9 +29,15 @@ const Tweet = ({show, onClose}) => {
         },
         body: JSON.stringify(body)
       })
+
+      const data = await res.json()
+      setIsLoadingTweet(false);
+
       onClose()
       
       setText('')
+      
+      
     }
     catch(e){
       alert('Failed to add, please try again later')

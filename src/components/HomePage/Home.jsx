@@ -14,6 +14,9 @@ import RightSidebar from "../Right-Sidebar/RightSidebar"
 const Home = () => {
 
   const [showResults, setShowResults] = useState(false)
+
+  const [isLoadingTweet, setIsLoadingTweet] = useState(false)
+
   const onClick  =()=>{
     setShowResults(wasOpened => !wasOpened);
   }
@@ -22,7 +25,6 @@ const Home = () => {
 
 
     const [posts, setPosts] = useState([])
-    const [tweet, setTweet] = useState([])
 
     useEffect(()=> {
       const getPosts = async() => {
@@ -33,7 +35,8 @@ const Home = () => {
 
       }
       getPosts()
-    }, [])
+      
+    },[isLoadingTweet])
   
     //Fetch Posts
     const fetchPosts = async () => {
@@ -42,15 +45,8 @@ const Home = () => {
   
       return data
     }
-  
-    //Fetch Post
-    const fetchPost = async (id) => {
-      const res = await fetch(`http://localhost:5000/tweet/${id}`)
-      const data = await res.json()
-  
-      return data
-    }
 
+    //Delete Post
     const deletePost = async (id) => {
       await fetch(`http://localhost:5000/tweet/${id}`, {
         method: 'DELETE'
@@ -59,34 +55,12 @@ const Home = () => {
       setPosts(posts.filter((post)=> post.id!==id))
     }
 
-      
-    //ComposeTweet
-      const tweetContent = (text) => {
-        setTweet([...text, tweetContent]);
-        console.log(text);
-      }
-      console.log(tweet);
-  
-//    const addTask = (task) =>{
-//   //   const res = await fetch('http://localhost:5000/tasks', {
-//   //     method: 'POST',
-//   //     headers: {
-//   //       'Content-type': 'application/json'
-//   //     },
-//   //     body: JSON.stringify(task)
-//   //   })
-  
-//   //   const data = await res.json()
-//   const id = Math.floor(Math.random() * 10000) +1
-//   const newTask = {id, ...task}
-//    setTasks([...tasks, newTask])
-//    }
 
-      const str = authentication.currentUser.displayName
+  const str = authentication.currentUser.displayName
 
   return (
       <div className="home-container">
-        <Sidebar className="sidebar" id="sidebar" onTweet = {tweetContent}/>
+        <Sidebar className="sidebar" id="sidebar" setIsLoadingTweet={setIsLoadingTweet}/>
             <div className="posts-container">
               <div className="welcome">
                 <div className="mobile-home-logo">
@@ -103,7 +77,7 @@ const Home = () => {
                  }
                 </div>
               </div>
-                <Tweets className="post" posts={posts} onDelete={deletePost} onTweet = {tweetContent}/>
+                <Tweets className="post" posts={posts} onDelete={deletePost}/>
             </div>
           <RightSidebar className="rightSidebar"/>
         </div>  

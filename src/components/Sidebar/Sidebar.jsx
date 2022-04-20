@@ -10,7 +10,7 @@ import { CgProfile, CgMoreO } from 'react-icons/cg'
 import { authentication, signOut } from '../../Firebase/firebase'
 import Tweet from '../Tweet/Tweet'
 
-const Sidebar = () => {
+const Sidebar = ({setIsLoadingTweet}) => {
 
   const [showResults, setShowResults] = useState(false)
   const onClick  =()=>{
@@ -60,7 +60,7 @@ const [show, setShow] = useState(false);
           <a href='/'>
             <div className='button-sidebar'><BiBookmark className='home-logo'/>
             <span className='span-home'>
-              bookmark</span></div>
+              Bookmark</span></div>
           </a>
         </div>
         <div className='home'>
@@ -85,7 +85,7 @@ const [show, setShow] = useState(false);
 
         <div className='tweet-button'>
           <button className='tweet' onClick={()=>setShow(true)}> Tweet </button>
-          <Tweet onClose={()=> setShow(false)} show={show}/>
+          <Tweet onClose={()=> setShow(false)} show={show} setIsLoadingTweet={setIsLoadingTweet} />
         </div>
         </div>
         

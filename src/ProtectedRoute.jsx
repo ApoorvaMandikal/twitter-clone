@@ -3,7 +3,7 @@ import { authentication } from './Firebase/firebase';
 import {useAuthState} from 'react-firebase-hooks/auth';
 import Home from "./components/HomePage/Home";
 
-const ProtectedRoute = ({auth, ...restOfProps}) => {
+const ProtectedRoute = ({Element, auth, ...restOfProps}) => {
     const [user] = useAuthState(authentication);
 
   return (

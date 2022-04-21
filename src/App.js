@@ -24,8 +24,9 @@ function App() {
   return (
   <Router>
        <Routes>
-         <Route path='/' element={<ProtectedRoute auth={true}/>} />
+         <Route path='/' element={<ProtectedRoute auth={user}/>} />
         <Route exact path="/login" element ={<AuthenticationPage />} />
+        <Route exact path="/status/:id" element ={<DisplayTweet />} />
       </Routes>
   </Router> )
 

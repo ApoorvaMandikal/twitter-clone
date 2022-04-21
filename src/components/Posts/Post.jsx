@@ -7,7 +7,7 @@ import {FiHeart} from 'react-icons/fi'
 import {BsChat} from 'react-icons/bs'
 import { authentication } from '../../Firebase/firebase'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, Link } from 'react-router-dom'
 import Tweet from '../Tweet/Tweet'
 import {FaTimes} from 'react-icons/fa'
 
@@ -18,10 +18,11 @@ const Post = ({post, onDelete}) => {
 
   const user = authentication.currentUser;
   let navigate = useNavigate();
+  let location = useLocation();
 
   const commentPage = ()=>{
-     navigate("/status/1");
-  }
+    navigate(`/status/${post.id}`, {state:{post_details:post}});
+        }
 
 
   return (

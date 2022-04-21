@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useMatch, useNavigate } from 'react-router-dom'
+import { useMatch, useNavigate, useLocation } from 'react-router-dom'
 import Post from '../Posts/Post'
 import './displaytweet.css'
 import { CgProfile } from 'react-icons/cg'
@@ -14,7 +14,10 @@ import RightSidebar from '../Right-Sidebar/RightSidebar'
 import Comment from '../Comment/Comment'
 
 
-const DisplayTweet = () => {
+const DisplayTweet = (props) => {
+
+
+    const location = useLocation();
 
     const [comment, setComment] = useState('')
 
@@ -26,12 +29,6 @@ const DisplayTweet = () => {
     const handleClick = () => {
         navigate("/")
     }
-
-    // const {
-    //     params: { id },
-    //   } = useMatch('/DisplayTweet/:id');
-
-    //   console.log(id)
 
     const posts =
     {
@@ -69,7 +66,7 @@ const DisplayTweet = () => {
                         <div className='tweet-content'>
 
                             <div className='tweet-wordings'>
-                                {posts.text}
+                                {location.state.post_details.tweet}
                             </div>
 
 

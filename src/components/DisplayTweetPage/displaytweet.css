@@ -129,6 +129,9 @@
     .post-content, .compose-comment, .comment-container, .go-back{
         width: 100%;
     }
+    .go-back{
+        cursor: pointer;
+    }
     .displayTweetPage{
         width: 97vw;
     }
@@ -186,6 +189,7 @@
         width: 15vw;
         height: 4vw;
         font-size: 3vw;
+        cursor: pointer;
 }
 .comment-container{
     height: 20vw;

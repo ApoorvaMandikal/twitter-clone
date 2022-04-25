@@ -139,7 +139,7 @@
     }
     .width-picUser {
         display: flex;
-        width: 27vw;
+        width: 33vw;
         justify-content: space-between;
     }
     .picture{
@@ -200,6 +200,12 @@
 .goback-icon{
     width: 10vw;
     height: 7vw;
+}
+.displayPage-user-name{
+    font-size: 3.5vw;
+}
+.displayPage-user-handle{
+    font-size: 3vw;
 }
 }
 

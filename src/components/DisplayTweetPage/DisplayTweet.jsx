@@ -1,9 +1,7 @@
-import { useState } from 'react'
-import { useMatch, useNavigate, useLocation } from 'react-router-dom'
-import Post from '../Posts/Post'
+import { useState, useEffect } from 'react'
+import {  useNavigate, useLocation } from 'react-router-dom'
 import './displaytweet.css'
 import { CgProfile } from 'react-icons/cg'
-import { GrGallery } from 'react-icons/gr'
 import { AiOutlineFileGif, AiOutlineRetweet } from 'react-icons/ai'
 import { FiHeart } from 'react-icons/fi'
 import { RiGalleryFill } from 'react-icons/ri'
@@ -11,31 +9,72 @@ import { BsChat, BsEmojiSmile, BsArrowLeft } from 'react-icons/bs'
 import Sidebar from '../Sidebar/Sidebar'
 import { authentication } from "../../Firebase/firebase"
 import RightSidebar from '../Right-Sidebar/RightSidebar'
-import Comment from '../Comment/Comment'
+import Comments from '../Comments/Comments'
 
 
-const DisplayTweet = (props) => {
-
+const DisplayTweet = () => {
 
     const location = useLocation();
-
-    const [comment, setComment] = useState('')
-
-    const onComment = () => {
-        console.log(comment);
-    }
-
     const navigate = useNavigate();
     const handleClick = () => {
         navigate("/")
     }
 
-    const posts =
-    {
-        "id": 1,
-        "text": "Hello Tweeter",
-        "comment": "Goodbye"
+    const [comments, setComments] = useState([])
+    const [commentContent, setCommentContent] = useState('')
+
+    
+    const handleChange = (e) => {
+        setCommentContent(e.target.value)
     }
+
+    
+    const onComment = async() => {
+        try {
+          const body = 
+                {
+                  "comment": commentContent,
+                  "email": authentication.currentUser.email,
+                  "timestamp": new Date().toISOString(),
+                  "postId": location.state.post_details.id
+                }
+          const res = await fetch(`http://localhost:5000/comments`
+          , {
+            method: 'POST',
+            headers: {  
+              'Content-type': 'application/json'
+            },
+            body: JSON.stringify(body)
+          }
+          )
+          const data = await res.json()        
+          setCommentContent('')
+        }
+        catch (e) {
+          alert('Failed to add, please try again later')
+          console.log(e);
+        }
+}
+
+    useEffect(()=> {
+        const getComments = async() => {
+          const res = await fetch(`http://localhost:5000/comments/`)
+          const data = await res.json()  
+          const commentsFromServer = await fetchComments(location.state.post_details.id)
+          setComments(commentsFromServer)
+  
+        }
+        getComments()
+        
+      },[onComment])
+    
+      //Fetch Posts
+      const fetchComments = async (id) => {
+        const res = await fetch(`http://localhost:5000/comments?postId=${id}`)
+        const data = await res.json()
+
+        return data
+      }
 
     return (
         <div className='container-displayTweetPage'>
@@ -55,8 +94,8 @@ const DisplayTweet = (props) => {
                             </div>
 
                             <div className='user-deets'>
-                                <div className='user-name'> Apoorva </div>
-                                <div className='user-handle' style={{ opacity: 0.5 }}>@lolololo</div>
+                                <div className='displayPage-user-name'> Apoorva </div>
+                                <div className='displayPage-user-handle' style={{ opacity: 0.5 }}>@lolololo</div>
                             </div>
                         </div>
 
@@ -100,7 +139,13 @@ const DisplayTweet = (props) => {
                     <CgProfile className='picture' style={{ color: '#50b7f5' }} />
                     <div className='comment-content'>
                         <div className='textbox-comment'>
-                            <textarea type="text" className="textbox" placeholder="Tweet your reply" ></textarea>
+                            <textarea 
+                                className="textbox" 
+                                placeholder="Tweet your reply" 
+                                value={commentContent}
+                                onChange={handleChange}
+                            >
+                            </textarea>
                         </div>
                         <div className='additional-contents-reply'>
                             <div className='additions'>
@@ -115,7 +160,7 @@ const DisplayTweet = (props) => {
                     </div>
                 </div>
 
-                <Comment />
+                <Comments comments={comments}/>
 
 
             </div>
@@ -125,12 +170,6 @@ const DisplayTweet = (props) => {
 
 
     )
-
-    // <>
-    // {posts.filter((post) =>(
-    //     <Post key={post.id} post ={post}></Post>
-    // ))}
-    // </>
 }
 
 export default DisplayTweet

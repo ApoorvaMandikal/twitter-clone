@@ -94,8 +94,8 @@ const DisplayTweet = () => {
                             </div>
 
                             <div className='user-deets'>
-                                <div className='displayPage-user-name'> Apoorva </div>
-                                <div className='displayPage-user-handle' style={{ opacity: 0.5 }}>@lolololo</div>
+                                <div className='displayPage-user-name'> {authentication.currentUser.displayName} </div>
+                                <div className='displayPage-user-handle' style={{ opacity: 0.5 }}>@{authentication.currentUser.email}</div>
                             </div>
                         </div>
 

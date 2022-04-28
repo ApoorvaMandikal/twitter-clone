@@ -23,7 +23,7 @@ function App() {
   </Router> )
 
   // return (
-  //   user ? <DisplayTweet /> : <AuthenticationPage/>
+  //   user ? <Home /> : <AuthenticationPage/>
   // );
   
 }

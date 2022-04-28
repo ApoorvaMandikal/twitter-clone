@@ -1,0 +1,103 @@
+.loginPage{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+
+.image-logo{
+    width: 55%;
+    background-color: #50b7f5;
+}
+
+.left-logo{
+    margin: 0 15vw;
+    width: 25vw;
+    height: 100vh;
+}
+.signIn-creds{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-form{
+    width: 30vw;
+}
+
+.right-logo{
+    color: white;
+    width: 3vw;
+    height: 3vw;
+}
+.p1{
+    font-size: 4vw;
+    margin-top: 3vw;
+}
+.p2{
+    font-size: 2.5vw;
+    margin-top: 3vw;
+}
+.google-signin{
+    width: 20vw;
+    height: 4vw;
+    border-radius: 50vw;
+    margin: 5vw 0 0 1.5vw;
+    font-size: 1.5vw;
+}
+.google-icon{
+    display: inline-block;
+      vertical-align: middle;
+      width: 2vw;
+      height: 1.5vw;
+}
+
+@media only screen and (max-device-width: 1000px) {
+    .loginPage {flex-direction: column; height: 100vh;}
+
+    .image-logo{
+        order: 2;
+        min-width: 100%; 
+    }
+    .left-logo{
+        margin-left: 35vw ;
+        width: 25vw ;
+        height: 45vh ;
+    }
+    .signIn-creds{
+        height: 100%;
+    }
+    .login-form{
+            order:1;
+            margin: 25vw auto ;
+            width:52vw ;
+
+    }
+    .p1{
+        font-size: 11vw ;
+        margin-top: 3vw ;
+    }
+    .p2{
+        font-size: 6vw ;
+        margin-top: 4vw ;
+    }
+    .right-logo {
+        color: white;
+        width: 7vw ;
+        height: 9vw ;
+        margin-top: 2.5vw ;
+    }
+    .google-signin {
+        width: 40vw ;
+        height: 7vw ;
+        border-radius: 50vw ;
+        margin: 8vw 0 0 0.5vw ;
+        font-size: 3vw ;
+    }
+    .google-icon {
+        width: 6vw ;
+        height: 3vw ;
+     }
+    
+}

@@ -1,0 +1,147 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(91, 112, 131, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    height: 100vh;
+    ;
+  }
+
+  .modal.show{
+      opacity: 1;
+      pointer-events: visible;
+      
+  }
+
+
+   .modal-content {
+    background-color: #000; 
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-20vw);
+    border-radius: 1vw;
+    
+   } 
+
+   .modal-d{
+    width: 40vw;
+    height: 30vh;
+    top: 5%;
+    bottom: none;
+    display: flex;
+    flex-direction: column;
+   }
+
+
+.modal-title {
+    margin: 0;
+  }
+  
+  .modal-header{
+    height: 10%;
+  }
+  .modal-close-button{
+    height: 1.5vw;
+    width: 3vw;
+    cursor: pointer;
+  }
+  .modal-body {
+height: 85%; 
+display: flex;
+flex-direction: row; }
+
+.modal-profile-picture{
+  width: 5vw;
+  height: 100%;
+}
+.modal-picture{
+  color: rgb(80, 183, 245);
+    width: 100%;
+    /* height: 3vw; */
+    height: 18%;
+}
+.modal-text-footer{
+  width: 80%;
+    height: 99%;
+    display: flex;
+    flex-direction: column;
+}
+.modal-text{
+  height: 80%;
+    width: 100%;
+}
+
+.modal-textarea{
+  height: 100%;
+    width: 100%;
+    background-color: black;
+    border: none;
+    overflow: auto;
+    outline: none;
+    box-shadow: none;
+    resize: none;
+    color: white;
+    font-size: 1.5vw;
+}
+
+  .modal-footer{
+    border-top: 0.01vw solid #eee;
+    justify-content: flex-end;
+    display: flex;
+    height: 20%;
+    align-items: center;
+
+  }
+  .modal-additional-icons{
+    height: 1.5vw;
+    width: 4vw;
+  }
+  .submit-button{
+    background-color: #50b7f5;
+    border-radius: 1vw;
+    border: none;
+    width: 6vw;
+    color: white;
+    height: 2vw;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-device-width: 1000px) {
+    .modal{width: 100vw;}
+    .modal-d{
+      width: 70vw;
+      height: 40vw;
+    }
+    .modal-close-button{
+      height: 2.5vw;
+    width: 4vw;
+    }
+    .modal-additional-icons{
+      height: 2.5vw;
+      width: 4vw;
+    }
+    .modal-body{
+      height: 89%;
+
+    }
+    .modal-textarea{
+      font-size: 2.5vw;
+
+    }
+    .modal-profile-picture {
+      width: 8vw;
+    }
+    .submit-button {
+      border-radius: 3vw;
+      width: 11vw;
+      height: 4vw;
+      font-size: 2.5vw;
+     }
+}

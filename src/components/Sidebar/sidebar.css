@@ -1,0 +1,94 @@
+.container-sidebar{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 30vw;
+    align-items: flex-end;
+}
+
+
+.sidebar-components{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: inherit;
+    margin-right: 1vw;
+    position: fixed;
+
+}
+.top-half{
+    justify-content: space-around;
+    margin-bottom: auto;
+    height: 60vh;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.home{
+    display: flex;
+}
+
+.twitter-logo, .home-logo, .profile-picture{
+    width: 2vw;
+    height: 1.5vw;
+
+} 
+.home, .tweet-button{
+        margin-top: 2vw;
+}
+.span-home{
+    margin: 0 1.5vw;
+    font-size: 1.5vw;
+}
+
+.button-sidebar{
+    display: flex;
+}
+
+.tweet, .logout-button{
+    width: 15vw;
+    height: 3vw;
+    border-radius: 50vw;
+    font-size: 1.5vw;
+    background-color: #50b7f5;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-info{
+    align-items: flex-end;
+    cursor: pointer;
+}
+.logout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* width: 17vw; */
+}
+.user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    font-size: 1vw;
+}
+
+.div-button{
+    border: 0.1vw solid grey;
+    border-radius: 1vw;
+}
+.logout-button{
+    margin: 3vw 2vw;
+    width: 75%;
+    border-radius: 0;
+}
+.slide-up-button{
+    border-radius: 1vw;
+    margin: 2vw 0;
+    z-index: 1;
+    background-color: black;
+}

@@ -1,0 +1,12 @@
+{
+  "tweet": [
+    {
+      "id": 1,
+      "text": "Hello Tweeter"
+    },
+    {
+      "id": 2,
+      "text": "Goodbye Tweeter"
+    }
+  ]
+}

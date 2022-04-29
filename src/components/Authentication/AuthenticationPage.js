@@ -1,19 +1,23 @@
 import { useEffect, useState, Redirect } from "react"
 import {BrowserRouter as Router, Routes, Route, Navigate, useNavigate} from 'react-router-dom'
 import { authentication } from '../../Firebase/firebase';
-import { signInWithPopup, GoogleAuthProvider, setPersistence, inMemoryPersistence, browserSessionPersistence, browserLocalPersistence } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, setPersistence, inMemoryPersistence, browserSessionPersistence, browserLocalPersistence, onAuthStateChanged, getAuth } from "firebase/auth";
 import "./AuthenticationPage.css"
 import { FaTwitter } from 'react-icons/fa'
 import { FaGoogle } from 'react-icons/fa'
 import Sidebar from '../Sidebar/Sidebar';
 import Home from '../HomePage/Home'
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
 
 
 const AuthenticationPage = () => {
+  let navigate = useNavigate();
 
-  const [isUserSignedIn, setIsUserSignedIn] = useState([]);
+
+  const [isUserSignedIn, setIsUserSignedIn] = useState({loggedIn:false});
   const [user] = useAuthState(authentication)
+
+ 
 
   const signInWithFirebase = async (navigate)=>{
      await setPersistence(authentication, browserSessionPersistence)
@@ -24,21 +28,33 @@ const AuthenticationPage = () => {
 
         if (result) {
           navigate("/", { replace: true });
+
         }
       }).catch((error)=>{
         alert('unable to find user')
         console.log(error.message)
       })
       )
-   
+ 
     }).catch((error) => {
       alert('Error signing in, please try later')
       console.log(error.message)
     })
   }
 
-  let navigate = useNavigate();
-
+  
+  useEffect(()=> {
+    onAuthStateChanged(authentication, (user) => {
+      if (user) {
+        navigate("/");
+      }
+        else {
+          authentication.signOut();
+        }
+      })
+    },[])
+  
+  
 
   return (
     

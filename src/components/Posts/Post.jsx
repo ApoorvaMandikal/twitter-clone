@@ -10,6 +10,8 @@ import { useState } from 'react'
 import { useLocation, useNavigate, Link } from 'react-router-dom'
 import Tweet from '../Tweet/Tweet'
 import {FaTimes} from 'react-icons/fa'
+import TimeAgo from 'react-timeago';
+import ReactTimeAgo from 'react-time-ago'
 
 //import {IoChatbubbleOutline} from 'react-icons/io5'
 
@@ -22,6 +24,7 @@ const Post = ({post, onDelete}) => {
 
   const commentPage = ()=>{
     navigate(`/status/${post.id}`, {state:{post_details:post}});
+    navigate(`/status/${post.timestamp}`, {state:{post_details:post}});
         }
 
 
@@ -43,7 +46,7 @@ const Post = ({post, onDelete}) => {
           <div className='user-handle' style={{opacity: 0.5}}>@{user.email}</div>
           <div className='dot'>&bull;</div>
           <div className='date-time'>
-            {/* {timestamp} */}14h
+          <ReactTimeAgo date={post.timestamp} timeStyle="twitter" />
           </div>
           </div>
           <div><FaTimes className='delete-button' onClick={()=>{onDelete(post.id)}}/></div>

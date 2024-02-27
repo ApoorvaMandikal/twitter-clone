@@ -10,6 +10,8 @@ import Sidebar from '../Sidebar/Sidebar'
 import { authentication } from "../../Firebase/firebase"
 import RightSidebar from '../Right-Sidebar/RightSidebar'
 import Comments from '../Comments/Comments'
+import ReactTimeAgo from 'react-time-ago'
+
 
 
 const DisplayTweet = () => {
@@ -110,9 +112,9 @@ const DisplayTweet = () => {
 
 
                             <div className='timestamp-details'>
-                                <div style={{ opacity: 0.5 }}>&bull;</div>
+                                {/* <div style={{ opacity: 0.5 }}>&bull;</div> */}
                                 <div className='date-time' style={{ opacity: 0.5 }}>
-                                    {/* {timestamp} */}14h
+                                    <ReactTimeAgo date={location.state.post_details.timestamp} timeStyle="twitter" />
                                 </div>
                             </div>
 

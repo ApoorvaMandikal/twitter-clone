@@ -1,7 +1,25 @@
 {
   "tweet": [
+    {
+      "tweet": "Welcome to Twitter Clone - Tweeter!",
+      "email": "iloveguitars98@gmail.com",
+      "timestamp": "2024-02-20T11:38:38.179Z",
+      "id": 1
+    },
+    {
+      "tweet": "For now the app only supports text tweets & comments, but stay tuned for upgrades! Thanks for visiting this site :)",
+      "email": "iloveguitars98@gmail.com",
+      "timestamp": "2024-02-21T16:40:42.133Z",
+      "id": 2
+    }
   ],
   "comments": [
-    
+    {
+      "comment": "great",
+      "email": "iloveguitars98@gmail.com",
+      "timestamp": "2024-02-27T16:25:07.494Z",
+      "postId": 2,
+      "id": 1
+    }
   ]
 }

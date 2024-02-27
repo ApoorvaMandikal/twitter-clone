@@ -74,7 +74,6 @@ const AuthenticationPage = () => {
             Sign in with Google
           </button>
         </div>
-       
       </div>
     </div>
     

@@ -7,6 +7,11 @@
 .container-sidebar{
     z-index: 2;
 }
+.floating-tweetB{
+    z-index: 3;
+}
+.floating-tweetB{visibility: hidden;}
+
 .posts-container{
     z-index: 1;
 }
@@ -61,6 +66,7 @@
     align-items: center;
 
     }
+    .floating-tweetB{visibility: visible;}
     .icons {
         width: 3vw;
         height: 2vw;

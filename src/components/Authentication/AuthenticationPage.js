@@ -70,8 +70,10 @@ const AuthenticationPage = () => {
           <button
             onClick={() => signInWithFirebase(navigate)}
             className='google-signin'>
-             <FaGoogle className="google-icon"/> 
-            Sign in with Google
+              <div id = 'sign-in'>
+            <div> <FaGoogle className="google-icon"/> </div>
+            <div>Sign in with Google</div>
+            </div>
           </button>
         </div>
       </div>

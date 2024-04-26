@@ -41,7 +41,7 @@ const Post = ({ post, onDelete }) => {
                   @apoorva@faketwitter.com
                 </div>
                 <div className="dot">&bull;</div>
-                <div className="date-time">Feb 20</div>
+                <div className="date-time">Jan 01</div>
               </div>
             </div>
 
@@ -75,7 +75,7 @@ const Post = ({ post, onDelete }) => {
                 <div className="dot">&bull;</div>
                 <div className="date-time">
                   {/* <ReactTimeAgo date={post.timestamp} timeStyle="twitter" /> */}
-                  Feb 20
+                  Jan 01
                 </div>
               </div>
             </div>

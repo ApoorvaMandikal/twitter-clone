@@ -1,0 +1,19 @@
+{
+  "tweet": [
+    {
+      "tweet": "Hi!",
+      "email": "iloveguitars98@gmail.com",
+      "timestamp": "2024-02-20T11:38:38.179Z",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "comment": "great",
+      "email": "iloveguitars98@gmail.com",
+      "timestamp": "2024-02-27T16:25:07.494Z",
+      "postId": 2,
+      "id": 1
+    }
+  ]
+}
